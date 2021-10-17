@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dfad7d4b-9cbe-4062-b2eb-866f7aa4845e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1yvcjbl10FPlpCVQvhSESEt3rU5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/chess" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="com.chess.engine.board.BoardUtils" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.chess" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.chess.engine.player" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="JChess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chess.JChess" />
+      <module name="my-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JChess" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfad7d4b-9cbe-4062-b2eb-866f7aa4845e" name="Default Changelist" comment="" />
+      <created>1633135638602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633135638602</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2052" y="-253" key="#Notifications" timestamp="1633440373775">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="2052" y="-253" key="#Notifications/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1633440373775" />
+    <state x="2265" y="-236" key="#com.intellij.ide.util.MemberChooser" timestamp="1634051157552">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="-735" y="-202" key="#com.intellij.ide.util.MemberChooser/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633243162294" />
+    <state x="2265" y="-236" key="#com.intellij.ide.util.MemberChooser/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634051157552" />
+    <state x="544" y="284" key="#com.intellij.ide.util.MemberChooser/78.0.1458.864@78.0.1458.864" timestamp="1633258893416" />
+    <state x="-811" y="-122" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1633238110261">
+      <screen x="-1080" y="-851" width="1080" height="1880" />
+    </state>
+    <state x="-811" y="-122" key="#com.intellij.ide.util.TreeClassChooserDialog/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633238110261" />
+    <state x="2072" y="57" width="584" height="439" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1633875608809">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="2072" y="57" width="584" height="439" key="#com.intellij.refactoring.memberPullUp.PullUpDialog/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1633875608809" />
+    <state x="2261" y="-45" width="422" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1634047896269">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="2261" y="-45" width="422" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634047896269" />
+    <state x="-821" y="-205" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1633238183301">
+      <screen x="-1080" y="-851" width="1080" height="1880" />
+    </state>
+    <state x="-821" y="-205" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633238183301" />
+    <state width="1413" height="559" key="GridCell.Tab.0.bottom" timestamp="1634212896679">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state width="1037" height="559" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634211331793" />
+    <state width="1413" height="559" key="GridCell.Tab.0.bottom/78.0.1458.864@78.0.1458.864" timestamp="1634212896679" />
+    <state width="1413" height="559" key="GridCell.Tab.0.center" timestamp="1634212896679">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state width="1037" height="559" key="GridCell.Tab.0.center/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634211331792" />
+    <state width="1413" height="559" key="GridCell.Tab.0.center/78.0.1458.864@78.0.1458.864" timestamp="1634212896679" />
+    <state width="1413" height="559" key="GridCell.Tab.0.left" timestamp="1634212896679">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state width="1037" height="559" key="GridCell.Tab.0.left/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634211331792" />
+    <state width="1413" height="559" key="GridCell.Tab.0.left/78.0.1458.864@78.0.1458.864" timestamp="1634212896679" />
+    <state width="1413" height="559" key="GridCell.Tab.0.right" timestamp="1634212896679">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state width="1037" height="559" key="GridCell.Tab.0.right/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634211331792" />
+    <state width="1413" height="559" key="GridCell.Tab.0.right/78.0.1458.864@78.0.1458.864" timestamp="1634212896679" />
+    <state x="-819" y="-166" width="540" height="524" key="StructurePopup" timestamp="1633239708003">
+      <screen x="-1080" y="-851" width="1080" height="1880" />
+    </state>
+    <state x="-819" y="-166" width="540" height="524" key="StructurePopup/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633239708003" />
+    <state x="2275" y="-133" key="chooseDestDirectoryDialog" timestamp="1634047775699">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="-725" y="-130" key="chooseDestDirectoryDialog/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633135766021" />
+    <state x="2275" y="-133" key="chooseDestDirectoryDialog/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634047775699" />
+    <state x="416" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1634479636528">
+      <screen x="78" y="0" width="1842" height="1080" />
+    </state>
+    <state x="-832" y="-84" key="com.intellij.ide.util.TipDialog/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633236669350" />
+    <state x="413" y="352" key="com.intellij.ide.util.TipDialog/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634209215692" />
+    <state x="2118" y="-316" key="com.intellij.ide.util.TipDialog/78.0.1458.864/1920.-854.1080.1880@78.0.1458.864" timestamp="1634270228915" />
+    <state x="395" y="143" key="com.intellij.ide.util.TipDialog/78.0.1458.864@78.0.1458.864" timestamp="1634225648793" />
+    <state x="416" y="309" key="com.intellij.ide.util.TipDialog/78.0.1842.1080@78.0.1842.1080" timestamp="1634479636528" />
+    <state x="2202" y="-289" key="refactoring.ChangeSignatureDialog" timestamp="1633963271588">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="-798" y="-286" key="refactoring.ChangeSignatureDialog/78.0.1458.864/-1080.-851.1080.1880@-1080.-851.1080.1880" timestamp="1633243171318" />
+    <state x="2202" y="-289" key="refactoring.ChangeSignatureDialog/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1633963271588" />
+    <state x="2116" y="23" key="run.anything.popup" timestamp="1634045554315">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="2116" y="23" key="run.anything.popup/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1634045554315" />
+    <state x="2123" y="-419" width="672" height="678" key="search.everywhere.popup" timestamp="1633876792511">
+      <screen x="1920" y="-854" width="1080" height="1880" />
+    </state>
+    <state x="2123" y="-419" width="672" height="678" key="search.everywhere.popup/78.0.1458.864/1920.-854.1080.1880@1920.-854.1080.1880" timestamp="1633876792511" />
+  </component>
+</project>
