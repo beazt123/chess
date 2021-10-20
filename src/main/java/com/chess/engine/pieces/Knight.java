@@ -64,7 +64,7 @@ public class Knight extends Piece {
     @Override
     public Piece movePiece(Move move) {
         final Piece movedPiece = move.getMovedPiece();
-        return new Knight(movedPiece.getPiecePosition(),
+        return new Knight(move.getDestinationCoordinate(),
                 movedPiece.getPieceAlliance());
     }
 

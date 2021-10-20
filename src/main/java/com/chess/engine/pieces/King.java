@@ -58,7 +58,7 @@ public class King extends Piece{
     @Override
     public Piece movePiece(Move move) {
         final Piece movedPiece = move.getMovedPiece();
-        return new King(movedPiece.getPiecePosition(),
+        return new King(move.getDestinationCoordinate(),
                 movedPiece.getPieceAlliance());
     }
 
@@ -82,14 +82,14 @@ public class King extends Piece{
     }
 
     private static boolean isFirstRowExclusion(int piecePosition, int candidateLegalMove){
-        return BoardUtils.FIRST_ROW[piecePosition]
+        return BoardUtils.EIGHTH_RANK[piecePosition]
                 && (candidateLegalMove == -9
                 || candidateLegalMove == -7
                 || candidateLegalMove == -8);
     }
 
     private static boolean isEighthRowExclusion(int piecePosition, int candidateLegalMove){
-        return BoardUtils.EIGHTH_ROW[piecePosition]
+        return BoardUtils.FIRST_RANK[piecePosition]
                 && (candidateLegalMove == 9
                 || candidateLegalMove == 7
                 || candidateLegalMove == 8);

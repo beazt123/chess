@@ -62,7 +62,7 @@ public class Bishop extends Piece {
     @Override
     public Piece movePiece(Move move) {
         final Piece movedPiece = move.getMovedPiece();
-        return new Bishop(movedPiece.getPiecePosition(),
+        return new Bishop(move.getDestinationCoordinate(),
                 movedPiece.getPieceAlliance());
         //TODO: pre-compute all possible pieces into a lookup table
     }
