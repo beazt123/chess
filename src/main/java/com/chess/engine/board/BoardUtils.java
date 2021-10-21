@@ -54,9 +54,4 @@ public class BoardUtils {
         return bitArr;
 
     }
-
-
-    public static void main(String[] args) {
-        System.out.println(SECOND_COLUMN[57]);
-    }
 }

@@ -6,6 +6,7 @@ import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
 import com.chess.engine.pieces.Piece;
 import com.chess.engine.player.MoveTransition;
+import com.google.common.collect.Lists;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,10 +17,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
+import static javax.swing.SwingConstants.PREVIOUS;
 import static javax.swing.SwingUtilities.isLeftMouseButton;
 import static javax.swing.SwingUtilities.isRightMouseButton;
 
@@ -37,12 +42,15 @@ public class Table {
     private final JFrame gameFrame;
     private final BoardPanel boardPanel;
 
-    private static String defaultPieceImagesPath = Paths.get("art","simple").toString();
+    private static final String defaultPieceImagesPath = Paths.get("art","simple").toString();
+    private boolean highlightLegalMoves;
     private Board chessBoard;
 
     private Tile sourceTile;
     private Tile destinationTile;
     private Piece humanMovedPiece;
+
+    BoardDirection boardDirection;
 
 
     public Table() {
@@ -54,12 +62,41 @@ public class Table {
         this.boardPanel = new BoardPanel();
         this.gameFrame.add(this.boardPanel, BorderLayout.CENTER);
         this.gameFrame.setVisible(true);
+        this.boardDirection = BoardDirection.NORMAL;
+        this.highlightLegalMoves = false;
 
+    }
+
+    private JMenu createPreferencesMenu() {
+        final JMenu preferencesMenu = new JMenu("Preferences");
+        final JMenuItem flipBoardMenuItem = new JMenuItem("Flip Board");
+        flipBoardMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                boardDirection = boardDirection.opposite();
+                boardPanel.drawBoard(chessBoard);
+            }
+        });
+        preferencesMenu.add(flipBoardMenuItem);
+
+        preferencesMenu.addSeparator();
+
+        final JCheckBoxMenuItem legalMoveHighlighterCheckBox = new JCheckBoxMenuItem("Highlight Legal Moves", false);
+        legalMoveHighlighterCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                highlightLegalMoves = legalMoveHighlighterCheckBox.isSelected();
+            }
+        });
+
+        preferencesMenu.add(legalMoveHighlighterCheckBox);
+        return preferencesMenu;
     }
 
     private JMenuBar createTableMenuBar() {
         final JMenuBar tableMenuBar = new JMenuBar();
         tableMenuBar.add(createFileMenu());
+        tableMenuBar.add(createPreferencesMenu());
         return tableMenuBar;
     }
 
@@ -95,7 +132,8 @@ public class Table {
 
         public void drawBoard(final Board board) {
             removeAll();
-            for (final TilePanel tilePanel : boardTiles) {
+            Collection<TilePanel> tp = boardDirection.traverse(boardTiles);
+            for (final TilePanel tilePanel : tp) {
                 tilePanel.drawTile(board);
                 add(tilePanel);
             }
@@ -126,7 +164,6 @@ public class Table {
                             sourceTile = chessBoard.getTile(tileId);
                             humanMovedPiece = sourceTile.getPiece();
                             System.out.println("Available moves: " + humanMovedPiece.calculateLegalMoves(chessBoard).toString());
-//                            System.out.println();
                             if (humanMovedPiece == null) {
                                 System.out.println("Empty tile clicked. Undoing..");
                                 sourceTile = null;
@@ -142,7 +179,6 @@ public class Table {
                             System.out.println(transition.getMoveStatus());
                             if (transition.getMoveStatus().isDone()) {
                                 chessBoard = transition.getBoard();
-                                System.out.println(chessBoard);
                                 //TODO: Add move to move log
                             }
                             sourceTile = null;
@@ -186,7 +222,29 @@ public class Table {
             validate();
         }
 
-         private void assignTilePieceIcon(final Board board) {
+        private void highlightLegals(final Board board) {
+            if (highlightLegalMoves) {
+                for (final Move move : pieceLegalMoves(board)){
+                    if (move.getDestinationCoordinate() == this.tileId) {
+                        try {
+                            final String filePathToGreenDot = Paths.get("art","misc", "green_dot.png").toString();
+                            add(new JLabel(new ImageIcon(ImageIO.read(new File(filePathToGreenDot)))));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+
+        private Collection<Move> pieceLegalMoves(final Board board) {
+            if (humanMovedPiece != null && humanMovedPiece.getPieceAlliance() == board.currentPlayer().getAlliance()) {
+                return humanMovedPiece.calculateLegalMoves(board);
+            }
+            return Collections.emptyList();
+        }
+
+        private void assignTilePieceIcon(final Board board) {
              this.removeAll();
              if (board.getTile(tileId)
                      .isTileOccupied()) {
@@ -226,9 +284,37 @@ public class Table {
         public void drawTile(final Board board) {
             assignTileColor();
             assignTilePieceIcon(board);
+            highlightLegals(board);
             validate();
             repaint();
         }
+    }
+
+    public enum BoardDirection {
+        NORMAL {
+            @Override
+            List<TilePanel> traverse(List<TilePanel> boardTiles) {
+                return boardTiles;
+            }
+
+            @Override
+            BoardDirection opposite() {
+                return BoardDirection.FLIPPED;
+            }
+        },
+        FLIPPED {
+            @Override
+            List<TilePanel> traverse(List<TilePanel> boardTiles) {
+                return Lists.reverse(boardTiles);
+            }
+
+            @Override
+            BoardDirection opposite() {
+                return BoardDirection.NORMAL;
+            }
+        };
+        abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
+        abstract BoardDirection opposite();
     }
 
 }
