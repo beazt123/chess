@@ -15,10 +15,12 @@ public abstract class Piece {
 
     Piece(final PieceType pieceType,
           final Alliance pieceAlliance,
-          final int piecePosition) {
+          final int piecePosition,
+          boolean isFirstMove) {
         this.pieceType = pieceType;
         this.pieceAlliance = pieceAlliance;
         this.piecePosition = piecePosition;
+        this.isFirstMove = isFirstMove;
         this.cachedHashCode = computeHashCode();
     }
 
@@ -67,19 +69,25 @@ public abstract class Piece {
                 && isFirstMove == otherPiece.isFirstMove(); //
     }
 
+    public int getPieceValue() {
+        return pieceType.getPieceValue();
+    }
+
     public enum PieceType {
-        PAWN("P"),
-        ROOK("R"),
-        KNIGHT("N"),
-        BISHOP("B"),
-        QUEEN("Q"),
-        KING("K");
+        PAWN(100, "P"),
+        ROOK(500,"R"),
+        KNIGHT(300,"N"),
+        BISHOP(300,"B"),
+        QUEEN(900,"Q"),
+        KING(10000,"K");
 
         private String pieceName;
+        private int pieceValue;
 
 
-        PieceType(String pieceName) {
+        PieceType(final int pieceValue, final String pieceName) {
             this.pieceName = pieceName;
+            this.pieceValue = pieceValue;
         }
 
 
@@ -94,6 +102,10 @@ public abstract class Piece {
 
         public boolean isRook() {
             return pieceName.equals("R");
+        }
+
+        public int getPieceValue() {
+            return pieceValue;
         }
     }
 }

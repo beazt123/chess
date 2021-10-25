@@ -16,8 +16,13 @@ public class Pawn extends Piece {
 
 
     public Pawn(final int piecePosition, final Alliance pieceAlliance) {
-        super(PieceType.PAWN, pieceAlliance, piecePosition);
+        super(PieceType.PAWN, pieceAlliance, piecePosition, true);
+    }
 
+    public Pawn(final Alliance pieceAlliance,
+                final int piecePosition,
+                final boolean isFirstMove) {
+        super(PieceType.PAWN, pieceAlliance, piecePosition, isFirstMove);
     }
 
     @Override
@@ -47,7 +52,7 @@ public class Pawn extends Piece {
                     if (!behindDestinationCoordinateTile.isTileOccupied()
                         && !destinationCoordinateTile.isTileOccupied()){
                         legalMoves.add(
-                                new Move.MajorMove(board,
+                                new Move.PawnJump(board,
                                         this,
                                         destinationCoordinate)
                         );
@@ -59,7 +64,7 @@ public class Pawn extends Piece {
                                 || (this.pieceAlliance.isBlack()
                                     && !BoardUtils.FIRST_COLUMN[destinationCoordinate]))){
                         legalMoves.add(
-                                new Move.AttackMove(board,
+                                new Move.PawnAttackMove(board,
                                         this,
                                         destinationCoordinate,
                                         pieceAtTile)
@@ -72,7 +77,7 @@ public class Pawn extends Piece {
                                 || (this.pieceAlliance.isBlack()
                                     && !BoardUtils.EIGHTH_COLUMN[destinationCoordinate]))){
                         legalMoves.add(
-                                new Move.AttackMove(board,
+                                new Move.PawnAttackMove(board,
                                         this,
                                         destinationCoordinate,
                                         pieceAtTile)

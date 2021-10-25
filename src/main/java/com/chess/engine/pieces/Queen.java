@@ -11,7 +11,13 @@ import java.util.List;
 
 public class Queen extends Piece {
     public Queen(int piecePosition, Alliance pieceAlliance) {
-        super(PieceType.QUEEN, pieceAlliance, piecePosition);
+        super(PieceType.QUEEN, pieceAlliance, piecePosition, true);
+    }
+
+    public Queen(final Alliance pieceAlliance,
+                final int piecePosition,
+                final boolean isFirstMove) {
+        super(PieceType.QUEEN, pieceAlliance, piecePosition, isFirstMove);
     }
 
     @Override

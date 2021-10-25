@@ -24,14 +24,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import static javax.swing.SwingConstants.PREVIOUS;
 import static javax.swing.SwingUtilities.isLeftMouseButton;
 import static javax.swing.SwingUtilities.isRightMouseButton;
 
 
 public class Table {
     private static final Dimension OUTER_FRAME_DIMENSION
-            = new Dimension(600,600);
+            = new Dimension(900,900);
     private static final Dimension BOARD_PANEL_DIMENSION
             = new Dimension(400,350);
     private static final Dimension TILE_PANEL_DIMENSION
@@ -41,6 +40,8 @@ public class Table {
 
     private final JFrame gameFrame;
     private final BoardPanel boardPanel;
+    private final GameHistoryPanel gameHistoryPanel;
+    private final TakenPiecesPanel takenPiecesPanel;
 
     private static final String defaultPieceImagesPath = Paths.get("art","simple").toString();
     private boolean highlightLegalMoves;
@@ -52,6 +53,8 @@ public class Table {
 
     BoardDirection boardDirection;
 
+    private final MoveLog moveLog;
+
 
     public Table() {
         this.gameFrame = new JFrame("JChess");
@@ -59,11 +62,18 @@ public class Table {
         this.gameFrame.setJMenuBar(tableMenuBar);
         this.gameFrame.setSize(OUTER_FRAME_DIMENSION);
         this.chessBoard = Board.createStandardBoard();
+        gameHistoryPanel = new GameHistoryPanel();
+        takenPiecesPanel = new TakenPiecesPanel();
         this.boardPanel = new BoardPanel();
-        this.gameFrame.add(this.boardPanel, BorderLayout.CENTER);
-        this.gameFrame.setVisible(true);
+        this.moveLog = new MoveLog();
         this.boardDirection = BoardDirection.NORMAL;
-        this.highlightLegalMoves = false;
+        this.highlightLegalMoves = true;
+
+        this.gameFrame.add(this.takenPiecesPanel, BorderLayout.WEST);
+        this.gameFrame.add(this.boardPanel, BorderLayout.CENTER);
+        this.gameFrame.add(this.gameHistoryPanel, BorderLayout.EAST);
+        this.gameFrame.setVisible(true);
+
 
     }
 
@@ -163,7 +173,7 @@ public class Table {
                             System.out.println("1st click at " + tileId);
                             sourceTile = chessBoard.getTile(tileId);
                             humanMovedPiece = sourceTile.getPiece();
-                            System.out.println("Available moves: " + humanMovedPiece.calculateLegalMoves(chessBoard).toString());
+//                            System.out.println("Available moves: " + humanMovedPiece.calculateLegalMoves(chessBoard).toString());
                             if (humanMovedPiece == null) {
                                 System.out.println("Empty tile clicked. Undoing..");
                                 sourceTile = null;
@@ -179,7 +189,7 @@ public class Table {
                             System.out.println(transition.getMoveStatus());
                             if (transition.getMoveStatus().isDone()) {
                                 chessBoard = transition.getBoard();
-                                //TODO: Add move to move log
+                                moveLog.addMove(move);
                             }
                             sourceTile = null;
                             destinationTile = null;
@@ -193,6 +203,8 @@ public class Table {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
                         public void run() {
+                            gameHistoryPanel.redo(chessBoard, moveLog);
+                            takenPiecesPanel.redo(moveLog);
                             boardPanel.drawBoard(chessBoard);
                         }
                     });
@@ -315,6 +327,40 @@ public class Table {
         };
         abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
         abstract BoardDirection opposite();
+    }
+
+    public static class MoveLog {
+        private final List<Move> moves;
+
+        public MoveLog() {
+            this.moves = new ArrayList<>();
+        }
+
+
+
+        public List<Move> getMoves() {
+            return moves;
+        }
+
+        public void addMove(Move move) {
+            moves.add(move);
+        }
+
+        public int size() {
+            return moves.size();
+        }
+
+        public void clear() {
+            moves.clear();
+        }
+
+        public Move removeMove(int index) {
+            return moves.remove(index);
+        }
+
+        public boolean removeMove(final Move move) {
+            return moves.remove(move);
+        }
     }
 
 }
