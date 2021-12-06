@@ -1,0 +1,161 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Java annotator",
+  "tags": [
+    "JAVA",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Cannot resolve method 'undoAllMoves' in 'Table'",
+  "detailsInfo": "<html>\n<body>\nAllows viewing the problems reported by the Java annotator: compilation problems, unresolved by IDEA references, and so on.\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 136,
+      "offset": 45,
+      "length": 12,
+      "code": {
+        "startLine": 134,
+        "length": 12,
+        "offset": 128,
+        "surroundingCode": "\n        final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n        resetMenuItem.addActionListener(e -> undoAllMoves());\n        optionsMenu.add(resetMenuItem);\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "JavaAnnotator"
+  },
+  "hash": "8956527734339884884"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Java annotator",
+  "tags": [
+    "JAVA",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Lambda expressions are not supported at language level '7'",
+  "detailsInfo": "<html>\n<body>\nAllows viewing the problems reported by the Java annotator: compilation problems, unresolved by IDEA references, and so on.\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 136,
+      "offset": 40,
+      "length": 1,
+      "code": {
+        "startLine": 134,
+        "length": 1,
+        "offset": 123,
+        "surroundingCode": "\n        final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n        resetMenuItem.addActionListener(e -> undoAllMoves());\n        optionsMenu.add(resetMenuItem);\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "JavaAnnotator"
+  },
+  "hash": "-5294381134993708254"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Java annotator",
+  "tags": [
+    "JAVA",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Cannot resolve method 'get' in 'StandardBoardEvaluator'",
+  "detailsInfo": "<html>\n<body>\nAllows viewing the problems reported by the Java annotator: compilation problems, unresolved by IDEA references, and so on.\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 140,
+      "offset": 95,
+      "length": 3,
+      "code": {
+        "startLine": 138,
+        "length": 3,
+        "offset": 192,
+        "surroundingCode": "\n        final JMenuItem evaluateBoardMenuItem = new JMenuItem(\"Evaluate Board\", KeyEvent.VK_E);\n        evaluateBoardMenuItem.addActionListener(e -> System.out.println(StandardBoardEvaluator.get().evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n        optionsMenu.add(evaluateBoardMenuItem);\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "JavaAnnotator"
+  },
+  "hash": "-6132141680757269688"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Java annotator",
+  "tags": [
+    "JAVA",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Cannot resolve method 'evaluationDetails(com.chess.engine.board.Board, int)'",
+  "detailsInfo": "<html>\n<body>\nAllows viewing the problems reported by the Java annotator: compilation problems, unresolved by IDEA references, and so on.\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 140,
+      "offset": 101,
+      "length": 17,
+      "code": {
+        "startLine": 138,
+        "length": 17,
+        "offset": 198,
+        "surroundingCode": "\n        final JMenuItem evaluateBoardMenuItem = new JMenuItem(\"Evaluate Board\", KeyEvent.VK_E);\n        evaluateBoardMenuItem.addActionListener(e -> System.out.println(StandardBoardEvaluator.get().evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n        optionsMenu.add(evaluateBoardMenuItem);\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "JavaAnnotator"
+  },
+  "hash": "-8414700051134012497"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Java annotator",
+  "tags": [
+    "JAVA",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Cannot resolve method 'promptUser' in 'Table'",
+  "detailsInfo": "<html>\n<body>\nAllows viewing the problems reported by the Java annotator: compilation problems, unresolved by IDEA references, and so on.\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/GameSetup.java",
+      "language": "JAVA",
+      "line": 96,
+      "offset": 43,
+      "length": 10,
+      "code": {
+        "startLine": 94,
+        "length": 10,
+        "offset": 122,
+        "surroundingCode": "            @Override\n            public void actionPerformed(ActionEvent e) {\n                Table.get().getGameSetup().promptUser();\n                Table.get().setupUpdate(Table.get());\n            }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "JavaAnnotator"
+  },
+  "hash": "-2439042342967648478"
+}]}

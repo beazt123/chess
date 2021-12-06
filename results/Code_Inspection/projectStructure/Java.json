@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "my-app",
+      "languageLevel": 7
+    }
+  ]
+}

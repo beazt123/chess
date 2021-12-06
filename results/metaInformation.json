@@ -1,0 +1,15 @@
+{
+  "total": 20,
+  "tools inspection": {
+    "Code Inspection": 20
+  },
+  "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/beazt123/chess",
+        "revisionId": "8ad8e7685e983a46fbe3f8a8f3860bd6a0048c91",
+        "branch": "main"
+      }
+    }
+  }
+}

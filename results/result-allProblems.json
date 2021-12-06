@@ -1,0 +1,561 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 108,
+      "offset": 31,
+      "length": 9,
+      "code": {
+        "startLine": 106,
+        "length": 9,
+        "offset": 102,
+        "surroundingCode": "\n    // Separating the same type of class into many types of subclasses\n    public static final class MajorMove extends Move {\n\n        public MajorMove(Board board, Piece piece, int destinationCoordinate) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "00ec2d24094bd8a985a8b3048dcdbb979e2643b626d5678194118525c4295afe"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 163,
+      "offset": 25,
+      "length": 15,
+      "code": {
+        "startLine": 161,
+        "length": 15,
+        "offset": 31,
+        "surroundingCode": "    }\n\n    public static class MajorAttackMove extends AttackMove {\n        public MajorAttackMove(final Board board,\n                               final Piece pieceMoved,"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "7043a159afe41d343e16ef3875e47392d72a5e18474624593ed587cbee60d831"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 203,
+      "offset": 31,
+      "length": 8,
+      "code": {
+        "startLine": 201,
+        "length": 8,
+        "offset": 37,
+        "surroundingCode": "    }\n\n    public static final class PawnMove extends Move {\n        public PawnMove(Board board, Piece movedPiece, int destinationCoordinate) {\n            super(board, movedPiece, destinationCoordinate);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "6ed8b3bfcd71c95b2c46f7fdd28223de9bb17b24726a1fe52a1da9c06620f923"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 219,
+      "offset": 25,
+      "length": 14,
+      "code": {
+        "startLine": 217,
+        "length": 14,
+        "offset": 31,
+        "surroundingCode": "\n    }\n    public static class PawnAttackMove extends AttackMove {\n        public PawnAttackMove(Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {\n            super(board, piece, destinationCoordinate, attackedPiece);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "c38900b1c2b27ec8bd4c92db87f77bb3cb9ad0b963aca66b3393309c3cc7ae72"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 236,
+      "offset": 31,
+      "length": 23,
+      "code": {
+        "startLine": 234,
+        "length": 23,
+        "offset": 46,
+        "surroundingCode": "        }\n    }\n    public static final class PawnEnPassantAttackMove extends PawnAttackMove {\n        public PawnEnPassantAttackMove(Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {\n            super(board, piece, destinationCoordinate, attackedPiece);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "c262ea469fa2e56b8db4678008bbc81a60b1330024511dc3d2bc860952bee1f2"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 355,
+      "offset": 31,
+      "length": 18,
+      "code": {
+        "startLine": 353,
+        "length": 18,
+        "offset": 46,
+        "surroundingCode": "        }\n    }\n    public static final class KingSideCastleMove extends CastleMove {\n        public KingSideCastleMove(Board board,\n                                  Piece movedPiece,"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "9e915cbbddbed58a180cf78697e508ae1c6b2c70daaca4a72dceeba0a5534593"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' and 'hashCode()' not paired",
+  "severity": "High",
+  "comment": "Class has 'equals()' defined but does not define 'hashCode()'",
+  "detailsInfo": "Reports classes that override the 'equals()' method but do not override the 'hashCode()' method or vice versa, which can potentially lead to problems when the class is added to a 'Collection' or a 'HashMap'. The quick-fix generates the default implementation for an absent method. Example: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n}' After the quick-fix is applied: 'class StringHolder {\n  String s;\n\n  @Override public int hashCode() {\n    return s != null ? s.hashCode() : 0;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof StringHolder)) return false;\n\n    StringHolder holder = (StringHolder)o;\n\n    if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n    return true;\n  }\n}'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 380,
+      "offset": 31,
+      "length": 19,
+      "code": {
+        "startLine": 378,
+        "length": 19,
+        "offset": 46,
+        "surroundingCode": "        }\n    }\n    public static final class QueenSideCastleMove extends CastleMove {\n        public QueenSideCastleMove(Board board,\n                                  Piece movedPiece,"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "EqualsAndHashcode"
+  },
+  "hash": "ebe47e22d13f479519e055bfc0d7421ccecd19fd78cf84338be75e8560629d3b"
+},{
+  "tool": "Code Inspection",
+  "category": "Verbose or redundant code constructs",
+  "type": "Unnecessary 'continue' statement",
+  "severity": "High",
+  "comment": "'continue' is unnecessary as the last statement in a loop",
+  "detailsInfo": "Reports 'continue' statements if they are the last reachable statements in the loop. These 'continue' statements are unnecessary and can be safely removed. Example: 'for (String element: elements) {\n    System.out.println();\n    continue;\n  }' After the quick-fix is applied: 'for (String element: elements) {\n    System.out.println();\n  }' The inspection doesn't analyze JSP files. Use the Ignore in then branch of 'if' statement with 'else' branch option to ignore 'continue' statements when they are placed in a 'then' branch of a complete 'if'-'else' statement. Example: 'for (String element: elements) {\n    if(element.isEmpty()) {\n      continue;\n    } else {\n      //...\n    }\n  }'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/pieces/King.java",
+      "language": "JAVA",
+      "line": 53,
+      "offset": 21,
+      "length": 8,
+      "code": {
+        "startLine": 51,
+        "length": 8,
+        "offset": 189,
+        "surroundingCode": "                    || isFirstRowExclusion(this.piecePosition, candidateLegalMove)\n                    || isEighthRowExclusion(this.piecePosition, candidateLegalMove)){\n                    continue;\n                } else {\n                    final Tile destinationTile = board.getTile(candidateDestinationCoordinate);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "UnnecessaryContinue"
+  },
+  "hash": "681291746cc89cfc600caed1ba4d1c1dc6049c05b96ad4878b03d4ecd9b5a10b"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 241,
+      "offset": 19,
+      "length": 15,
+      "code": {
+        "startLine": 239,
+        "length": 15,
+        "offset": 130,
+        "surroundingCode": "                Table.get().moveMadeUpdate(PlayerType.COMPUTER);\n            } catch (InterruptedException e) {\n                e.printStackTrace();\n            } catch (ExecutionException e) {\n                e.printStackTrace();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "3156b48d3d3498ea782206bdf21d0fecab72625fb074f3ea488655a086bb544f"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 243,
+      "offset": 19,
+      "length": 15,
+      "code": {
+        "startLine": 241,
+        "length": 15,
+        "offset": 100,
+        "surroundingCode": "                e.printStackTrace();\n            } catch (ExecutionException e) {\n                e.printStackTrace();\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "1a1331d04f5148a68810c7abff372d8a18f40e34768fbd9f565731c6e510af09"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 405,
+      "offset": 31,
+      "length": 15,
+      "code": {
+        "startLine": 403,
+        "length": 15,
+        "offset": 184,
+        "surroundingCode": "                            add(new JLabel(new ImageIcon(ImageIO.read(new File(filePathToGreenDot)))));\n                        } catch (IOException e) {\n                            e.printStackTrace();\n                        }\n                    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "24f7e57bdf6e00d102e7733f1547e6b47b2ef1e81f918e5990a6e805c650889b"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 81,
+      "offset": 19,
+      "length": 15,
+      "code": {
+        "startLine": 79,
+        "length": 15,
+        "offset": 106,
+        "surroundingCode": "                southPanel.add(imageLabel);\n            } catch (final IOException e) {\n                e.printStackTrace();\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "e3182321dcf5b55f254f40153154f772cab0ac7b10b20a0fb165ef1be4f016bf"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 95,
+      "offset": 19,
+      "length": 15,
+      "code": {
+        "startLine": 93,
+        "length": 15,
+        "offset": 106,
+        "surroundingCode": "                southPanel.add(imageLabel);\n            } catch (final IOException e) {\n                e.printStackTrace();\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "081fcb719fd487dccc2f04ce3b3a0b7ec22c15f846b4bc7b66e7661a2050e95b"
+},{
+  "tool": "Code Inspection",
+  "category": "Performance",
+  "type": "Concatenation with empty string",
+  "severity": "High",
+  "comment": "Empty string used in concatenation",
+  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 76,
+      "offset": 153,
+      "length": 2,
+      "code": {
+        "startLine": 74,
+        "length": 2,
+        "offset": 228,
+        "surroundingCode": "        for (final Piece takenPiece : whiteTakenPieces) {\n            try {\n                final BufferedImage image = ImageIO.read(new File(Paths.get(\"art\",\"simple\") + takenPiece.getPieceAlliance().toString().substring(0,1) + \"\" + takenPiece.toString()));\n                final ImageIcon icon = new ImageIcon(image);\n                final JLabel imageLabel = new JLabel();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "TrivialStringConcatenation"
+  },
+  "hash": "be54485d8e2d030c1ea18052393802566248455df936736e77eb2aa92f239e0b"
+},{
+  "tool": "Code Inspection",
+  "category": "Performance",
+  "type": "Concatenation with empty string",
+  "severity": "High",
+  "comment": "Empty string used in concatenation",
+  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 88,
+      "offset": 27,
+      "length": 2,
+      "code": {
+        "startLine": 86,
+        "length": 2,
+        "offset": 134,
+        "surroundingCode": "            try {\n                String fileName = takenPiece.getPieceAlliance().toString().substring(0,1)\n                        + \"\" + takenPiece.getPieceType().toString() + \".gif\";\n                final BufferedImage image = ImageIO.read(\n                        new File(Paths.get(\"art\",\"simple\", fileName).toString()));"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "TrivialStringConcatenation"
+  },
+  "hash": "061efaa0647af04649c9b184210bcf6afc0ba22291fd15f0983079b39ef6301c"
+},{
+  "tool": "Code Inspection",
+  "category": "Verbose or redundant code constructs",
+  "type": "Redundant String operation",
+  "severity": "High",
+  "comment": "Replace 'board.getTile(tileId) .getPiece() .getPieceAlliance() .toString() .substring(0, 1)' with 'board.getTile(tileId) .getPiece() .getPieceAlliance() .toString().charAt(0)'",
+  "detailsInfo": "Reports redundant 'String' constructors and calls to methods like 'toString()' or 'substring()' when they can be replaced with a simplified expression. For example, calls to these methods can be safely removed in cases like '\"string\".substring(0)', '\"string\".toString()', or 'new StringBuilder().toString().substring(1,3)'. Example: 'System.out.println(new String(\"message\"));' After the quick-fix is applied: 'System.out.println(\"message\");' Note that the quick-fix removes the redundant constructor, and this may affect 'String' referential equality. If you need to preserve it even though it is considered bad practice, suppress the warning or configure the settings to ignore redundant 'String' constructors. New in 2018.1",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/Table.java",
+      "language": "JAVA",
+      "line": 428,
+      "offset": 51,
+      "length": 9,
+      "code": {
+        "startLine": 426,
+        "length": 9,
+        "offset": 180,
+        "surroundingCode": "                                                 .getPieceAlliance()\n                                                 .toString()\n                                                 .substring(0, 1)\n                             + board.getTile(tileId).getPiece().toString()\n                             + \".gif\";"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "StringOperationCanBeSimplified"
+  },
+  "hash": "6d61eebe8acf756893080264faa03fa554885fb899d8ebaab97453e59eaae070"
+},{
+  "tool": "Code Inspection",
+  "category": "Verbose or redundant code constructs",
+  "type": "Redundant String operation",
+  "severity": "High",
+  "comment": "Replace 'takenPiece.getPieceAlliance().toString().substring(0,1)' with 'takenPiece.getPieceAlliance().toString().charAt(0)'",
+  "detailsInfo": "Reports redundant 'String' constructors and calls to methods like 'toString()' or 'substring()' when they can be replaced with a simplified expression. For example, calls to these methods can be safely removed in cases like '\"string\".substring(0)', '\"string\".toString()', or 'new StringBuilder().toString().substring(1,3)'. Example: 'System.out.println(new String(\"message\"));' After the quick-fix is applied: 'System.out.println(\"message\");' Note that the quick-fix removes the redundant constructor, and this may affect 'String' referential equality. If you need to preserve it even though it is considered bad practice, suppress the warning or configure the settings to ignore redundant 'String' constructors. New in 2018.1",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 87,
+      "offset": 76,
+      "length": 9,
+      "code": {
+        "startLine": 85,
+        "length": 9,
+        "offset": 151,
+        "surroundingCode": "        for (final Piece takenPiece : blackTakenPieces) {\n            try {\n                String fileName = takenPiece.getPieceAlliance().toString().substring(0,1)\n                        + \"\" + takenPiece.getPieceType().toString() + \".gif\";\n                final BufferedImage image = ImageIO.read("
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "StringOperationCanBeSimplified"
+  },
+  "hash": "06033b7a3a943b342329633827db6fe325fb571a428a64659d86662b06eb6023"
+},{
+  "tool": "Code Inspection",
+  "category": "Verbose or redundant code constructs",
+  "type": "Redundant String operation",
+  "severity": "High",
+  "comment": "Replace 'BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).substring(0, 1)' with 'BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).charAt(0)'",
+  "detailsInfo": "Reports redundant 'String' constructors and calls to methods like 'toString()' or 'substring()' when they can be replaced with a simplified expression. For example, calls to these methods can be safely removed in cases like '\"string\".substring(0)', '\"string\".toString()', or 'new StringBuilder().toString().substring(1,3)'. Example: 'System.out.println(new String(\"message\"));' After the quick-fix is applied: 'System.out.println(\"message\");' Note that the quick-fix removes the redundant constructor, and this may affect 'String' referential equality. If you need to preserve it even though it is considered bad practice, suppress the warning or configure the settings to ignore redundant 'String' constructors. New in 2018.1",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 231,
+      "offset": 91,
+      "length": 9,
+      "code": {
+        "startLine": 229,
+        "length": 9,
+        "offset": 143,
+        "surroundingCode": "        @Override\n        public String toString() {\n            return BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).substring(0, 1)\n                    + \"x\"\n                    + BoardUtils.getPositionAtCoordinate(this.destinationCoordinate);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "StringOperationCanBeSimplified"
+  },
+  "hash": "5e24ea546f4df78e358644a14f81a5621f212707ecb56096e2362850481d4603"
+},{
+  "tool": "Code Inspection",
+  "category": "Threading issues",
+  "type": "Static initializer references subclass",
+  "severity": "High",
+  "comment": "Referencing subclass NullMove from superclass Move initializer might lead to class loading deadlock",
+  "detailsInfo": "Reports classes that refer to their subclasses in static initializers or static fields. Such references can cause JVM-level deadlocks in multithreaded environment, when one thread tries to load the superclass and another thread tries to load the subclass at the same time. Example:   class Parent {\n    static final Child field = new Child();\n  }\n  class Child extends Parent { }",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/board/Move.java",
+      "language": "JAVA",
+      "line": 15,
+      "offset": 46,
+      "length": 8,
+      "code": {
+        "startLine": 13,
+        "length": 8,
+        "offset": 133,
+        "surroundingCode": "    protected final int destinationCoordinate;\n    protected final boolean isFirstMove;\n    public static final Move NULL_MOVE = new NullMove();\n\n    private Move(Board board,"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "StaticInitializerReferencesSubClass"
+  },
+  "hash": "1401e13b6faa2856ab2d154bd13e58edb71993972d7ba15ad4394265d87cd65a"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Unused assignment",
+  "severity": "High",
+  "comment": "Variable 'isFirstMove' initializer 'true' is redundant",
+  "detailsInfo": "Reports the cases in which a variable is redundant as its value is never used after its assignment. If the variable is not used, it's better to remove it to shorten the code and avoid redundant allocations. The following cases are reported: The variable never gets read after assignment. The value is always overwritten with another assignment before the next variable is read. The variable initializer is redundant (for one of the two reasons above). Configure the inspection: Use the Report redundant initializers option to report redundant initializers: 'int getI() {\n    int i = 0; // redundant initialization\n    i = 2;\n    return i;\n  }' Use the Report ++i when may be replaced with (i + 1) option to report the cases when '++i' expression may be replaced with 'i + 1': 'int preInc(int i) {\n    int res = i;\n    return ++res;\n  }' Use the Report i++ when changed value is not used afterwards option to report the cases when the result of 'i++' expression is not used later: 'int postInc(int i) {\n    int res = i;\n    return res++;\n  }'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/engine/pieces/Piece.java",
+      "language": "JAVA",
+      "line": 13,
+      "offset": 35,
+      "length": 4,
+      "code": {
+        "startLine": 11,
+        "length": 4,
+        "offset": 111,
+        "surroundingCode": "    private PieceType pieceType;\n    protected final Alliance pieceAlliance;\n    private boolean isFirstMove = true;\n    private final int cachedHashCode;\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "UnusedAssignment"
+  },
+  "hash": "3b02f18b9fd04b494b366b90f48ae04b99cd4752b544ecf7e7fdd41558765a4c"
+}]}
