@@ -14,15 +14,30 @@ import java.util.List;
 public class King extends Piece{
     private final static int[] CANDIDATE_LEGAL_MOVES
             = {-7, 7, -9, 9, -1, 1, -8, 8};
+    private boolean isCastled;
+    private final boolean kingSideCastleCapable;
+    private final boolean queenSideCastleCapable;
 
-    public King(final int piecePosition, final Alliance pieceAlliance) {
-        super(PieceType.KING, pieceAlliance, piecePosition, true);
+    public King(final Alliance alliance,
+                final int piecePosition,
+                final boolean kingSideCastleCapable,
+                final boolean queenSideCastleCapable) {
+        super(PieceType.KING, alliance, piecePosition, true);
+        this.isCastled = false;
+        this.kingSideCastleCapable = kingSideCastleCapable;
+        this.queenSideCastleCapable = queenSideCastleCapable;
     }
 
     public King(final Alliance pieceAlliance,
                  final int piecePosition,
-                 final boolean isFirstMove) {
+                 final boolean isFirstMove,
+                final boolean isCastled,
+                final boolean kingSideCastleCapable,
+                final boolean queenSideCastleCapable) {
         super(PieceType.KING, pieceAlliance, piecePosition, isFirstMove);
+        this.isCastled = isCastled;
+        this.kingSideCastleCapable = kingSideCastleCapable;
+        this.queenSideCastleCapable = queenSideCastleCapable;
     }
 
     @Override
@@ -42,12 +57,12 @@ public class King extends Piece{
                     if (destinationTile.isTileOccupied()
                             && pieceAtTile.getPieceAlliance() != this.pieceAlliance) {
                         legalMoves.add(
-                                new Move.AttackMove(board,
+                                new Move.MajorAttackMove(board,
                                     this,
                                     candidateDestinationCoordinate,
                                     pieceAtTile)
                         );
-                    } else {
+                    } else if (!destinationTile.isTileOccupied()) {
                         legalMoves.add(
                                 new Move.MajorMove(board,
                                         this,
@@ -61,11 +76,19 @@ public class King extends Piece{
         return ImmutableList.copyOf(legalMoves);
     }
 
+    public boolean isCastled() {
+        return this.isCastled;
+    }
+
     @Override
     public Piece movePiece(Move move) {
         final Piece movedPiece = move.getMovedPiece();
-        return new King(move.getDestinationCoordinate(),
-                movedPiece.getPieceAlliance());
+        return new King(this.pieceAlliance,
+                move.getDestinationCoordinate(),
+                false,
+                move.isCastlingMove(),
+                false,
+                false);
     }
 
     @Override

@@ -4,6 +4,9 @@ import com.chess.engine.pieces.Pawn;
 import com.chess.engine.pieces.Piece;
 import com.chess.engine.pieces.Rook;
 
+import javax.xml.bind.helpers.AbstractUnmarshallerImpl;
+import java.util.Collection;
+
 public abstract class Move {
     protected final Board board;
     protected final Piece movedPiece;
@@ -148,7 +151,7 @@ public abstract class Move {
 
         @Override
         public boolean equals(Object other) {
-            if (this.equals(other)) return true;
+            if (this == other) return true;
             if (!(other instanceof AttackMove)) return false;
 
             final AttackMove otherAttackMove = (AttackMove) other;
@@ -189,6 +192,11 @@ public abstract class Move {
         @Override
         public int getCurrentCoordinate() {
             return -1;
+        }
+
+        @Override
+        public String toString(){
+            return "";
         }
     }
 
@@ -394,6 +402,63 @@ public abstract class Move {
         }
     }
 
+    public static class PawnPromotion extends Move {
+        private final Pawn promotedPawn;
+        private final Move decoratedMove;
+
+        public PawnPromotion(final Move decoratedMove) {
+            super(decoratedMove.getBoard(), decoratedMove.getMovedPiece(), decoratedMove.getDestinationCoordinate());
+            this.decoratedMove = decoratedMove;
+            this.promotedPawn = (Pawn) decoratedMove.getMovedPiece();
+        }
+
+        @Override
+        public Board execute() {
+            final Board pawnMovedBoard = this.decoratedMove.execute();
+            final Board.Builder builder = new Board.Builder();
+            for (final Piece piece : pawnMovedBoard.currentPlayer().getActivePieces()) {
+                if (!this.promotedPawn.equals(piece)) builder.setPiece(piece);
+            }
+            for (final Piece piece : pawnMovedBoard.currentPlayer().getOpponent().getActivePieces()) {
+                builder.setPiece(piece);
+            }
+
+            builder.setPiece(this.promotedPawn.getPromotionPiece().movePiece(this));
+            builder.setMoveMaker(pawnMovedBoard.currentPlayer().getAlliance());
+
+            return builder.build();
+        }
+
+        @Override
+        public boolean isAttack() {
+            return decoratedMove.isAttack();
+        }
+
+        @Override
+        public Piece getAttackedPiece() {
+            return decoratedMove.getAttackedPiece();
+        }
+
+        @Override
+        public String toString() {
+            return "";
+        }
+
+        @Override
+        public int hashCode() {
+            return decoratedMove.hashCode() + (31 * promotedPawn.hashCode());
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            return this == other || other instanceof PawnPromotion && super.equals(other);
+        }
+    }
+
+    private Board getBoard() {
+        return board;
+    }
+
     public static class MoveFactory {
 
 
@@ -404,7 +469,8 @@ public abstract class Move {
                                       final int currentCoordinate,
                                       final int destinationCoordinate) {
             //may be good to just allow creation of moves only for the current player
-            for (final Move move : board.getAllLegalMoves()) {
+            Iterable<Move> boardLegalMoves = board.getAllLegalMoves();
+            for (final Move move : boardLegalMoves) {
                 if (move.getCurrentCoordinate() == currentCoordinate
                         && move.getDestinationCoordinate() == destinationCoordinate) {
                     return move;

@@ -49,7 +49,7 @@ public class Rook extends Piece {
                         Piece pieceAtTile = destinationTile.getPiece();
                         if (pieceAtTile.getPieceAlliance() != this.pieceAlliance) {
                             legalMoves.add(
-                                    new Move.AttackMove(board,
+                                    new Move.MajorAttackMove(board,
                                             this,
                                             destionationTileCoordinate,
                                             pieceAtTile)

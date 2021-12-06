@@ -44,7 +44,7 @@ public class Bishop extends Piece {
                         Piece pieceAtTile = targetTile.getPiece();
                         if (pieceAtTile.getPieceAlliance() != pieceAlliance) {
                             legalMoves.add(
-                                    new Move.AttackMove(board,
+                                    new Move.MajorAttackMove(board,
                                             this,
                                             destinationCoordinate,
                                             pieceAtTile)

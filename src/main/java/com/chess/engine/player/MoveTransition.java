@@ -25,4 +25,8 @@ public class MoveTransition {
         return transitionBoard;
     }
 
+    public Board getTransitionBoard() {
+        return transitionBoard;
+    }
+
 }

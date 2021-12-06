@@ -55,7 +55,7 @@ public class Knight extends Piece {
                             = pieceAtDestination.getPieceAlliance();
                     if (pieceAlliance != this.pieceAlliance) {
                         legalMoves.add(
-                                new Move.AttackMove(board,
+                                new Move.MajorAttackMove(board,
                                         this, candidateDestinationCoordinate,
                                         pieceAtDestination)
                         );

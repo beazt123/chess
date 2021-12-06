@@ -21,15 +21,18 @@ public class Board {
 
     private final Player currentPlayer;
 
+    private final Pawn enPassantPawn;
+
 
     private Board(final Builder builder) {
         this.gameBoard = createGameBoard(builder);
         this.whitePieces = calculateActivePieces(this.gameBoard, Alliance.WHITE);
         this.blackPieces = calculateActivePieces(this.gameBoard, Alliance.BLACK);
 
+
+        this.enPassantPawn = builder.enPassantPawn;
         final Collection<Move> whiteStandardLegalMoves = calculateLegalMoves(this.whitePieces);
         final Collection<Move> blackStandardLegalMoves = calculateLegalMoves(this.blackPieces);
-
         this.whitePlayer = new WhitePlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
         this.blackPlayer = new BlackPlayer(this, blackStandardLegalMoves, whiteStandardLegalMoves);
         this.currentPlayer = builder.nextMoveMaker.choosePlayer(this.blackPlayer, this.whitePlayer);
@@ -73,7 +76,7 @@ public class Board {
         boardBuilder.setPiece(new Knight(1, Alliance.BLACK));
         boardBuilder.setPiece(new Bishop(2, Alliance.BLACK));
         boardBuilder.setPiece(new Queen(3, Alliance.BLACK));
-        boardBuilder.setPiece(new King(4, Alliance.BLACK));
+        boardBuilder.setPiece(new King(Alliance.BLACK, 4, true, true));
         boardBuilder.setPiece(new Bishop(5, Alliance.BLACK));
         boardBuilder.setPiece(new Knight(6, Alliance.BLACK));
         boardBuilder.setPiece(new Rook(7, Alliance.BLACK));
@@ -98,7 +101,7 @@ public class Board {
         boardBuilder.setPiece(new Knight(57, Alliance.WHITE));
         boardBuilder.setPiece(new Bishop(58, Alliance.WHITE));
         boardBuilder.setPiece(new Queen(59, Alliance.WHITE));
-        boardBuilder.setPiece(new King(60, Alliance.WHITE));
+        boardBuilder.setPiece(new King(Alliance.WHITE, 60, true, true));
         boardBuilder.setPiece(new Bishop(61, Alliance.WHITE));
         boardBuilder.setPiece(new Knight(62, Alliance.WHITE));
         boardBuilder.setPiece(new Rook(63, Alliance.WHITE));
@@ -133,6 +136,10 @@ public class Board {
         return Iterables.concat(this.whitePlayer.getLegalMoves(),
                 this.blackPlayer.getLegalMoves());
 
+    }
+
+    public Pawn getEnPassantPawn() {
+        return enPassantPawn;
     }
 
     public static class Builder {

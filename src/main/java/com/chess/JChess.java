@@ -8,6 +8,6 @@ public class JChess {
         Board board = Board.createStandardBoard();
         System.out.println(board.toString());
 
-        Table table = new Table();
+        Table table = Table.get();
     }
 }

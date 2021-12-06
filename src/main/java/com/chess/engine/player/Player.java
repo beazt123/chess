@@ -76,7 +76,7 @@ public abstract class Player {
         return false;
     }
 
-    public boolean isInStaleMate(Move move) {
+    public boolean isInStaleMate() {
         return !isInCheck && !hasEscapeMoves();
     }
 
@@ -121,4 +121,7 @@ public abstract class Player {
     protected abstract Collection<Move> calculateKingCastles(Collection<Move> playerLegals,
                                                              Collection<Move> opponentsLegals);
 
+    public boolean isCastled() {
+        return this.playerKing.isCastled();
+    }
 }
