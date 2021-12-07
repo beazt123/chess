@@ -6,88 +6,87 @@ import com.chess.engine.player.MoveTransition;
 
 public class Minimax implements MoveStrategy {
 
-    private final BoardEvaluator boardEvaluator;
-    private final int searchDepth;
+  private final BoardEvaluator boardEvaluator;
+  private final int searchDepth;
 
-    public Minimax(final int searchDepth) {
-        this.boardEvaluator = new StandardBoardEvaluator();
-        this.searchDepth = searchDepth;
-    }
+  public Minimax(final int searchDepth) {
+    this.boardEvaluator = new StandardBoardEvaluator();
+    this.searchDepth = searchDepth;
+  }
 
-    @Override
-    public String toString() {
-        return "MiniMax";
-    }
+  @Override
+  public String toString() {
+    return "MiniMax";
+  }
 
-    @Override
-    public Move execute(Board board) {
-        final long startTime = System.currentTimeMillis();
+  @Override
+  public Move execute(Board board) {
+    final long startTime = System.currentTimeMillis();
 
-        Move bestMove = null;
+    Move bestMove = null;
 
-        int highestseenValue = Integer.MIN_VALUE;
-        int lowestseenValue = Integer.MAX_VALUE;
-        int currentValue;
+    int highestseenValue = Integer.MIN_VALUE;
+    int lowestseenValue = Integer.MAX_VALUE;
+    int currentValue;
 
-        System.out.println(board.currentPlayer() + " thinking with depth = " + searchDepth);
+    System.out.println(board.currentPlayer() + " thinking with depth = " + searchDepth);
 
-        int numMoves = board.currentPlayer().getLegalMoves().size();
-        for (final Move move : board.currentPlayer().getLegalMoves()) {
-            final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
-            if(moveTransition.getMoveStatus().isDone()) {
-                currentValue = board.currentPlayer().getAlliance().isWhite()
-                        ? min(moveTransition.getTransitionBoard(), searchDepth - 1)
-                        : max(moveTransition.getTransitionBoard(), searchDepth - 1);
-                if (board.currentPlayer().getAlliance().isWhite()
-                        && currentValue >= highestseenValue) {
-                    highestseenValue = currentValue;
-                    bestMove = move;
-                } else if (board.currentPlayer().getAlliance().isBlack()
-                        && currentValue <= lowestseenValue) {
-                    lowestseenValue = currentValue;
-                    bestMove = move;
-                }
-            }
+    int numMoves = board.currentPlayer().getLegalMoves().size();
+    for (final Move move : board.currentPlayer().getLegalMoves()) {
+      final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
+      if (moveTransition.getMoveStatus().isDone()) {
+        currentValue =
+            board.currentPlayer().getAlliance().isWhite()
+                ? min(moveTransition.getTransitionBoard(), searchDepth - 1)
+                : max(moveTransition.getTransitionBoard(), searchDepth - 1);
+        if (board.currentPlayer().getAlliance().isWhite() && currentValue >= highestseenValue) {
+          highestseenValue = currentValue;
+          bestMove = move;
+        } else if (board.currentPlayer().getAlliance().isBlack()
+            && currentValue <= lowestseenValue) {
+          lowestseenValue = currentValue;
+          bestMove = move;
         }
-        final long executionTime = System.currentTimeMillis() - startTime;
-
-        return bestMove;
+      }
     }
+    final long executionTime = System.currentTimeMillis() - startTime;
 
-    public int min(final Board board, final int depth) {
-        if (depth == 0 || isEndGameScenario(board)) return this.boardEvaluator.evaluate(board, depth);
+    return bestMove;
+  }
 
-        int lowestSeenValue = Integer.MAX_VALUE;
-        for (final Move move : board.currentPlayer().getLegalMoves()) {
-            final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
-            if (moveTransition.getMoveStatus().isDone()) {
-                final int currentValue = max(moveTransition.getTransitionBoard(), depth - 1);
-                if (currentValue < lowestSeenValue) {
-                    lowestSeenValue = currentValue;
-                }
-            }
+  public int min(final Board board, final int depth) {
+    if (depth == 0 || isEndGameScenario(board)) return this.boardEvaluator.evaluate(board, depth);
+
+    int lowestSeenValue = Integer.MAX_VALUE;
+    for (final Move move : board.currentPlayer().getLegalMoves()) {
+      final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
+      if (moveTransition.getMoveStatus().isDone()) {
+        final int currentValue = max(moveTransition.getTransitionBoard(), depth - 1);
+        if (currentValue < lowestSeenValue) {
+          lowestSeenValue = currentValue;
         }
-        return lowestSeenValue;
+      }
     }
+    return lowestSeenValue;
+  }
 
-    public int max(final Board board, final int depth) {
-        if (depth == 0 || isEndGameScenario(board)) return this.boardEvaluator.evaluate(board, depth);
+  public int max(final Board board, final int depth) {
+    if (depth == 0 || isEndGameScenario(board)) return this.boardEvaluator.evaluate(board, depth);
 
-        int highestSeenValue = Integer.MIN_VALUE;
-        for (final Move move : board.currentPlayer().getLegalMoves()) {
-            final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
-            if (moveTransition.getMoveStatus().isDone()) {
-                final int currentValue = min(moveTransition.getTransitionBoard(), depth - 1);
-                if (currentValue > highestSeenValue) {
-                    highestSeenValue = currentValue;
-                }
-            }
+    int highestSeenValue = Integer.MIN_VALUE;
+    for (final Move move : board.currentPlayer().getLegalMoves()) {
+      final MoveTransition moveTransition = board.currentPlayer().makeMove(move);
+      if (moveTransition.getMoveStatus().isDone()) {
+        final int currentValue = min(moveTransition.getTransitionBoard(), depth - 1);
+        if (currentValue > highestSeenValue) {
+          highestSeenValue = currentValue;
         }
-        return highestSeenValue;
+      }
     }
+    return highestSeenValue;
+  }
 
-    private static boolean isEndGameScenario(final Board board) {
-        return board.currentPlayer().isInCheckMate()
-                || board.currentPlayer().isInStaleMate();
-    }
+  private static boolean isEndGameScenario(final Board board) {
+    return board.currentPlayer().isInCheckMate() || board.currentPlayer().isInStaleMate();
+  }
 }
