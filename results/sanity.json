@@ -14,14 +14,14 @@
       "type": "method",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 136,
-      "offset": 45,
+      "line": 132,
+      "offset": 41,
       "length": 12,
       "code": {
-        "startLine": 134,
+        "startLine": 130,
         "length": 12,
-        "offset": 128,
-        "surroundingCode": "\n        final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n        resetMenuItem.addActionListener(e -> undoAllMoves());\n        optionsMenu.add(resetMenuItem);\n"
+        "offset": 120,
+        "surroundingCode": "\n    final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n    resetMenuItem.addActionListener(e -> undoAllMoves());\n    optionsMenu.add(resetMenuItem);\n"
       }
     }
   ],
@@ -29,7 +29,7 @@
     "module": "my-app",
     "inspectionName": "JavaAnnotator"
   },
-  "hash": "8956527734339884884"
+  "hash": "-621857639697649453"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -46,14 +46,14 @@
       "type": "method",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 136,
-      "offset": 40,
+      "line": 132,
+      "offset": 36,
       "length": 1,
       "code": {
-        "startLine": 134,
+        "startLine": 130,
         "length": 1,
-        "offset": 123,
-        "surroundingCode": "\n        final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n        resetMenuItem.addActionListener(e -> undoAllMoves());\n        optionsMenu.add(resetMenuItem);\n"
+        "offset": 115,
+        "surroundingCode": "\n    final JMenuItem resetMenuItem = new JMenuItem(\"New Game\", KeyEvent.VK_P);\n    resetMenuItem.addActionListener(e -> undoAllMoves());\n    optionsMenu.add(resetMenuItem);\n"
       }
     }
   ],
@@ -61,7 +61,7 @@
     "module": "my-app",
     "inspectionName": "JavaAnnotator"
   },
-  "hash": "-5294381134993708254"
+  "hash": "-6494072806934975860"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -78,14 +78,14 @@
       "type": "method",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 140,
-      "offset": 95,
+      "line": 139,
+      "offset": 39,
       "length": 3,
       "code": {
-        "startLine": 138,
+        "startLine": 137,
         "length": 3,
-        "offset": 192,
-        "surroundingCode": "\n        final JMenuItem evaluateBoardMenuItem = new JMenuItem(\"Evaluate Board\", KeyEvent.VK_E);\n        evaluateBoardMenuItem.addActionListener(e -> System.out.println(StandardBoardEvaluator.get().evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n        optionsMenu.add(evaluateBoardMenuItem);\n"
+        "offset": 84,
+        "surroundingCode": "        e ->\n            System.out.println(\n                StandardBoardEvaluator.get()\n                    .evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n    optionsMenu.add(evaluateBoardMenuItem);"
       }
     }
   ],
@@ -93,7 +93,7 @@
     "module": "my-app",
     "inspectionName": "JavaAnnotator"
   },
-  "hash": "-6132141680757269688"
+  "hash": "589826500671391313"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -111,13 +111,13 @@
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
       "line": 140,
-      "offset": 101,
+      "offset": 21,
       "length": 17,
       "code": {
         "startLine": 138,
         "length": 17,
-        "offset": 198,
-        "surroundingCode": "\n        final JMenuItem evaluateBoardMenuItem = new JMenuItem(\"Evaluate Board\", KeyEvent.VK_E);\n        evaluateBoardMenuItem.addActionListener(e -> System.out.println(StandardBoardEvaluator.get().evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n        optionsMenu.add(evaluateBoardMenuItem);\n"
+        "offset": 98,
+        "surroundingCode": "            System.out.println(\n                StandardBoardEvaluator.get()\n                    .evaluationDetails(chessBoard, gameSetup.getSearchDepth())));\n    optionsMenu.add(evaluateBoardMenuItem);\n"
       }
     }
   ],
@@ -125,7 +125,7 @@
     "module": "my-app",
     "inspectionName": "JavaAnnotator"
   },
-  "hash": "-8414700051134012497"
+  "hash": "-1029414193435071336"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -142,14 +142,14 @@
       "type": "method",
       "path": "src/main/java/com/chess/gui/GameSetup.java",
       "language": "JAVA",
-      "line": 96,
-      "offset": 43,
+      "line": 102,
+      "offset": 39,
       "length": 10,
       "code": {
-        "startLine": 94,
+        "startLine": 100,
         "length": 10,
-        "offset": 122,
-        "surroundingCode": "            @Override\n            public void actionPerformed(ActionEvent e) {\n                Table.get().getGameSetup().promptUser();\n                Table.get().setupUpdate(Table.get());\n            }"
+        "offset": 114,
+        "surroundingCode": "          @Override\n          public void actionPerformed(ActionEvent e) {\n            Table.get().getGameSetup().promptUser();\n            Table.get().setupUpdate(Table.get());\n          }"
       }
     }
   ],
@@ -157,5 +157,5 @@
     "module": "my-app",
     "inspectionName": "JavaAnnotator"
   },
-  "hash": "-2439042342967648478"
+  "hash": "-7214243264137384288"
 }]}

@@ -1,0 +1,32 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Use of System.out or System.err",
+  "tags": [
+    "JAVA"
+  ],
+  "severity": "High",
+  "comment": "Uses of <code>System.out</code> should probably be replaced with more robust logging",
+  "detailsInfo": "<html>\n<body>\nReports usages of <code>System.out</code> or <code>System.err</code>.\n<p>Such statements are often used for temporary debugging and should be either removed from the production code, or replaced by a more robust\n  logging facility.</p>\n<!-- tooltip end -->\n</body>\n</html>",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/java/com/chess/gui/GameSetup.java",
+      "language": "JAVA",
+      "line": 69,
+      "offset": 12,
+      "length": 10,
+      "code": {
+        "startLine": 67,
+        "length": 10,
+        "offset": 98,
+        "surroundingCode": "        new ActionListener() {\n          public void actionPerformed(ActionEvent e) {\n            System.out.println(\"Cancel\");\n            GameSetup.this.setVisible(false);\n          }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "SystemOutErr"
+  },
+  "hash": "-7598955673010168078"
+}]}

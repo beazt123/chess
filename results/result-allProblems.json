@@ -10,14 +10,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 108,
-      "offset": 31,
+      "line": 98,
+      "offset": 29,
       "length": 9,
       "code": {
-        "startLine": 106,
+        "startLine": 96,
         "length": 9,
-        "offset": 102,
-        "surroundingCode": "\n    // Separating the same type of class into many types of subclasses\n    public static final class MajorMove extends Move {\n\n        public MajorMove(Board board, Piece piece, int destinationCoordinate) {"
+        "offset": 98,
+        "surroundingCode": "\n  // Separating the same type of class into many types of subclasses\n  public static final class MajorMove extends Move {\n\n    public MajorMove(Board board, Piece piece, int destinationCoordinate) {"
       }
     }
   ],
@@ -25,7 +25,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "00ec2d24094bd8a985a8b3048dcdbb979e2643b626d5678194118525c4295afe"
+  "hash": "c8ba9ef6fe2f8a762135ea685c41abad3478b92a6ff1696f45a58c54c7d27bd8"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -38,14 +38,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 163,
-      "offset": 25,
+      "line": 151,
+      "offset": 23,
       "length": 15,
       "code": {
-        "startLine": 161,
+        "startLine": 149,
         "length": 15,
-        "offset": 31,
-        "surroundingCode": "    }\n\n    public static class MajorAttackMove extends AttackMove {\n        public MajorAttackMove(final Board board,\n                               final Piece pieceMoved,"
+        "offset": 27,
+        "surroundingCode": "  }\n\n  public static class MajorAttackMove extends AttackMove {\n    public MajorAttackMove(\n        final Board board,"
       }
     }
   ],
@@ -53,7 +53,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "7043a159afe41d343e16ef3875e47392d72a5e18474624593ed587cbee60d831"
+  "hash": "3ec281482494c7003e2f873c6f56e0eb1affef250f4a2a6653bdf917437ad767"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -66,14 +66,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 203,
-      "offset": 31,
+      "line": 193,
+      "offset": 29,
       "length": 8,
       "code": {
-        "startLine": 201,
+        "startLine": 191,
         "length": 8,
-        "offset": 37,
-        "surroundingCode": "    }\n\n    public static final class PawnMove extends Move {\n        public PawnMove(Board board, Piece movedPiece, int destinationCoordinate) {\n            super(board, movedPiece, destinationCoordinate);"
+        "offset": 33,
+        "surroundingCode": "  }\n\n  public static final class PawnMove extends Move {\n    public PawnMove(Board board, Piece movedPiece, int destinationCoordinate) {\n      super(board, movedPiece, destinationCoordinate);"
       }
     }
   ],
@@ -81,7 +81,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "6ed8b3bfcd71c95b2c46f7fdd28223de9bb17b24726a1fe52a1da9c06620f923"
+  "hash": "171faabddddf7a7358ed3be7a1b42b391647761765177e74c7f372eed9b63aa7"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -94,14 +94,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 219,
-      "offset": 25,
+      "line": 209,
+      "offset": 23,
       "length": 14,
       "code": {
-        "startLine": 217,
+        "startLine": 207,
         "length": 14,
-        "offset": 31,
-        "surroundingCode": "\n    }\n    public static class PawnAttackMove extends AttackMove {\n        public PawnAttackMove(Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {\n            super(board, piece, destinationCoordinate, attackedPiece);"
+        "offset": 27,
+        "surroundingCode": "  }\n\n  public static class PawnAttackMove extends AttackMove {\n    public PawnAttackMove(\n        Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {"
       }
     }
   ],
@@ -109,7 +109,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "c38900b1c2b27ec8bd4c92db87f77bb3cb9ad0b963aca66b3393309c3cc7ae72"
+  "hash": "aa2f71b4a047613ab644d6e96270ac306f95fd771006073d504d51b89e9e3714"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -122,14 +122,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 236,
-      "offset": 31,
+      "line": 228,
+      "offset": 29,
       "length": 23,
       "code": {
-        "startLine": 234,
+        "startLine": 226,
         "length": 23,
-        "offset": 46,
-        "surroundingCode": "        }\n    }\n    public static final class PawnEnPassantAttackMove extends PawnAttackMove {\n        public PawnEnPassantAttackMove(Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {\n            super(board, piece, destinationCoordinate, attackedPiece);"
+        "offset": 33,
+        "surroundingCode": "  }\n\n  public static final class PawnEnPassantAttackMove extends PawnAttackMove {\n    public PawnEnPassantAttackMove(\n        Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {"
       }
     }
   ],
@@ -137,7 +137,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "c262ea469fa2e56b8db4678008bbc81a60b1330024511dc3d2bc860952bee1f2"
+  "hash": "9f62460f797898d5a5615726de39e0b0bb3e5876464844b8a6446559d8a0c101"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -150,14 +150,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 355,
-      "offset": 31,
+      "line": 350,
+      "offset": 29,
       "length": 18,
       "code": {
-        "startLine": 353,
+        "startLine": 348,
         "length": 18,
-        "offset": 46,
-        "surroundingCode": "        }\n    }\n    public static final class KingSideCastleMove extends CastleMove {\n        public KingSideCastleMove(Board board,\n                                  Piece movedPiece,"
+        "offset": 33,
+        "surroundingCode": "  }\n\n  public static final class KingSideCastleMove extends CastleMove {\n    public KingSideCastleMove(\n        Board board,"
       }
     }
   ],
@@ -165,7 +165,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "9e915cbbddbed58a180cf78697e508ae1c6b2c70daaca4a72dceeba0a5534593"
+  "hash": "c0272b9c245fa969b9e6c96ca56cd10661336e2d816b1fcc512999c2fb61bb4d"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -178,14 +178,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 380,
-      "offset": 31,
+      "line": 378,
+      "offset": 29,
       "length": 19,
       "code": {
-        "startLine": 378,
+        "startLine": 376,
         "length": 19,
-        "offset": 46,
-        "surroundingCode": "        }\n    }\n    public static final class QueenSideCastleMove extends CastleMove {\n        public QueenSideCastleMove(Board board,\n                                  Piece movedPiece,"
+        "offset": 33,
+        "surroundingCode": "  }\n\n  public static final class QueenSideCastleMove extends CastleMove {\n    public QueenSideCastleMove(\n        Board board,"
       }
     }
   ],
@@ -193,7 +193,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "ebe47e22d13f479519e055bfc0d7421ccecd19fd78cf84338be75e8560629d3b"
+  "hash": "1fda0ec160ddbe726cb05cd68f6583934add0612320ba4af0ece16836e1f327a"
 },{
   "tool": "Code Inspection",
   "category": "Verbose or redundant code constructs",
@@ -206,14 +206,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/pieces/King.java",
       "language": "JAVA",
-      "line": 53,
-      "offset": 21,
+      "line": 54,
+      "offset": 11,
       "length": 8,
       "code": {
-        "startLine": 51,
+        "startLine": 52,
         "length": 8,
-        "offset": 189,
-        "surroundingCode": "                    || isFirstRowExclusion(this.piecePosition, candidateLegalMove)\n                    || isEighthRowExclusion(this.piecePosition, candidateLegalMove)){\n                    continue;\n                } else {\n                    final Tile destinationTile = board.getTile(candidateDestinationCoordinate);"
+        "offset": 164,
+        "surroundingCode": "            || isFirstRowExclusion(this.piecePosition, candidateLegalMove)\n            || isEighthRowExclusion(this.piecePosition, candidateLegalMove)) {\n          continue;\n        } else {\n          final Tile destinationTile = board.getTile(candidateDestinationCoordinate);"
       }
     }
   ],
@@ -221,7 +221,7 @@
     "module": "my-app",
     "inspectionName": "UnnecessaryContinue"
   },
-  "hash": "681291746cc89cfc600caed1ba4d1c1dc6049c05b96ad4878b03d4ecd9b5a10b"
+  "hash": "f8610c959473c5b80961e4d0f5ef099ea3032287f35750e2c3fd639cb810c18f"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -234,14 +234,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 241,
-      "offset": 19,
+      "line": 247,
+      "offset": 11,
       "length": 15,
       "code": {
-        "startLine": 239,
+        "startLine": 245,
         "length": 15,
-        "offset": 130,
-        "surroundingCode": "                Table.get().moveMadeUpdate(PlayerType.COMPUTER);\n            } catch (InterruptedException e) {\n                e.printStackTrace();\n            } catch (ExecutionException e) {\n                e.printStackTrace();"
+        "offset": 108,
+        "surroundingCode": "        Table.get().moveMadeUpdate(PlayerType.COMPUTER);\n      } catch (InterruptedException e) {\n        e.printStackTrace();\n      } catch (ExecutionException e) {\n        e.printStackTrace();"
       }
     }
   ],
@@ -249,7 +249,7 @@
     "module": "my-app",
     "inspectionName": "ThrowablePrintStackTrace"
   },
-  "hash": "3156b48d3d3498ea782206bdf21d0fecab72625fb074f3ea488655a086bb544f"
+  "hash": "27c59f020b6162fc7da517bdae4ea36b1367d319b523f7a858b4c83378f36d8f"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -262,14 +262,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 243,
-      "offset": 19,
+      "line": 249,
+      "offset": 11,
       "length": 15,
       "code": {
-        "startLine": 241,
+        "startLine": 247,
         "length": 15,
-        "offset": 100,
-        "surroundingCode": "                e.printStackTrace();\n            } catch (ExecutionException e) {\n                e.printStackTrace();\n            }\n        }"
+        "offset": 78,
+        "surroundingCode": "        e.printStackTrace();\n      } catch (ExecutionException e) {\n        e.printStackTrace();\n      }\n    }"
       }
     }
   ],
@@ -277,7 +277,7 @@
     "module": "my-app",
     "inspectionName": "ThrowablePrintStackTrace"
   },
-  "hash": "1a1331d04f5148a68810c7abff372d8a18f40e34768fbd9f565731c6e510af09"
+  "hash": "b01e2a0953eb4d925327a2bf5125f244b82d12b106c873543cc5fb2204c6479c"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -290,14 +290,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 405,
-      "offset": 31,
+      "line": 407,
+      "offset": 17,
       "length": 15,
       "code": {
-        "startLine": 403,
+        "startLine": 405,
         "length": 15,
-        "offset": 184,
-        "surroundingCode": "                            add(new JLabel(new ImageIcon(ImageIO.read(new File(filePathToGreenDot)))));\n                        } catch (IOException e) {\n                            e.printStackTrace();\n                        }\n                    }"
+        "offset": 144,
+        "surroundingCode": "              add(new JLabel(new ImageIcon(ImageIO.read(new File(filePathToGreenDot)))));\n            } catch (IOException e) {\n              e.printStackTrace();\n            }\n          }"
       }
     }
   ],
@@ -305,7 +305,7 @@
     "module": "my-app",
     "inspectionName": "ThrowablePrintStackTrace"
   },
-  "hash": "24f7e57bdf6e00d102e7733f1547e6b47b2ef1e81f918e5990a6e805c650889b"
+  "hash": "de5972d33efc0556eb0fc457d0297e945d4a01e8efb946cf3e83568fec91d460"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -318,14 +318,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
       "language": "JAVA",
-      "line": 81,
-      "offset": 19,
+      "line": 87,
+      "offset": 11,
       "length": 15,
       "code": {
-        "startLine": 79,
+        "startLine": 85,
         "length": 15,
-        "offset": 106,
-        "surroundingCode": "                southPanel.add(imageLabel);\n            } catch (final IOException e) {\n                e.printStackTrace();\n            }\n        }"
+        "offset": 84,
+        "surroundingCode": "        southPanel.add(imageLabel);\n      } catch (final IOException e) {\n        e.printStackTrace();\n      }\n    }"
       }
     }
   ],
@@ -333,7 +333,7 @@
     "module": "my-app",
     "inspectionName": "ThrowablePrintStackTrace"
   },
-  "hash": "e3182321dcf5b55f254f40153154f772cab0ac7b10b20a0fb165ef1be4f016bf"
+  "hash": "be4b0553bfc9c45f24198dc868d02f12da53ef4a0131300d41e21645281c8a4e"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -341,6 +341,62 @@
   "severity": "High",
   "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
   "detailsInfo": "Reports calls to 'Throwable.printStackTrace()' without arguments. Such statements are often used for temporary debugging and should be either removed from the production code or replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 104,
+      "offset": 11,
+      "length": 15,
+      "code": {
+        "startLine": 102,
+        "length": 15,
+        "offset": 84,
+        "surroundingCode": "        southPanel.add(imageLabel);\n      } catch (final IOException e) {\n        e.printStackTrace();\n      }\n    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "67536ba83637e1f91e41b997fa9f14f4408f8ffb76deb64d2e769442f1290b90"
+},{
+  "tool": "Code Inspection",
+  "category": "Performance",
+  "type": "Concatenation with empty string",
+  "severity": "High",
+  "comment": "Empty string used in concatenation",
+  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
+      "language": "JAVA",
+      "line": 81,
+      "offset": 27,
+      "length": 2,
+      "code": {
+        "startLine": 79,
+        "length": 2,
+        "offset": 156,
+        "surroundingCode": "                    Paths.get(\"art\", \"simple\")\n                        + takenPiece.getPieceAlliance().toString().substring(0, 1)\n                        + \"\"\n                        + takenPiece.toString()));\n        final ImageIcon icon = new ImageIcon(image);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "my-app",
+    "inspectionName": "TrivialStringConcatenation"
+  },
+  "hash": "d3505814a6529781f41649df0df4195d8c331c2f91f3dc72482530005b7477b7"
+},{
+  "tool": "Code Inspection",
+  "category": "Performance",
+  "type": "Concatenation with empty string",
+  "severity": "High",
+  "comment": "Empty string used in concatenation",
+  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
   "sources": [
     {
       "type": "file",
@@ -348,40 +404,12 @@
       "language": "JAVA",
       "line": 95,
       "offset": 19,
-      "length": 15,
+      "length": 2,
       "code": {
         "startLine": 93,
-        "length": 15,
-        "offset": 106,
-        "surroundingCode": "                southPanel.add(imageLabel);\n            } catch (final IOException e) {\n                e.printStackTrace();\n            }\n        }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "my-app",
-    "inspectionName": "ThrowablePrintStackTrace"
-  },
-  "hash": "081fcb719fd487dccc2f04ce3b3a0b7ec22c15f846b4bc7b66e7661a2050e95b"
-},{
-  "tool": "Code Inspection",
-  "category": "Performance",
-  "type": "Concatenation with empty string",
-  "severity": "High",
-  "comment": "Empty string used in concatenation",
-  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
-  "sources": [
-    {
-      "type": "file",
-      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
-      "language": "JAVA",
-      "line": 76,
-      "offset": 153,
-      "length": 2,
-      "code": {
-        "startLine": 74,
         "length": 2,
-        "offset": 228,
-        "surroundingCode": "        for (final Piece takenPiece : whiteTakenPieces) {\n            try {\n                final BufferedImage image = ImageIO.read(new File(Paths.get(\"art\",\"simple\") + takenPiece.getPieceAlliance().toString().substring(0,1) + \"\" + takenPiece.toString()));\n                final ImageIcon icon = new ImageIcon(image);\n                final JLabel imageLabel = new JLabel();"
+        "offset": 113,
+        "surroundingCode": "        String fileName =\n            takenPiece.getPieceAlliance().toString().substring(0, 1)\n                + \"\"\n                + takenPiece.getPieceType().toString()\n                + \".gif\";"
       }
     }
   ],
@@ -389,55 +417,27 @@
     "module": "my-app",
     "inspectionName": "TrivialStringConcatenation"
   },
-  "hash": "be54485d8e2d030c1ea18052393802566248455df936736e77eb2aa92f239e0b"
-},{
-  "tool": "Code Inspection",
-  "category": "Performance",
-  "type": "Concatenation with empty string",
-  "severity": "High",
-  "comment": "Empty string used in concatenation",
-  "detailsInfo": "Reports string concatenations where one of the arguments is the empty string. Such a concatenation is unnecessary and inefficient, particularly when used as an idiom for formatting non-'String' objects or primitives into 'String's. A quick-fix is suggested to simplify the concatenation. Example: 'void foo(int x, int y) {\n    String s = \"\" + x + \" ; \" + y;\n  }' After the quick-fix is applied: 'void foo(int x, int y) {\n    String s = x + \" ; \" + y;\n  }'",
-  "sources": [
-    {
-      "type": "file",
-      "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
-      "language": "JAVA",
-      "line": 88,
-      "offset": 27,
-      "length": 2,
-      "code": {
-        "startLine": 86,
-        "length": 2,
-        "offset": 134,
-        "surroundingCode": "            try {\n                String fileName = takenPiece.getPieceAlliance().toString().substring(0,1)\n                        + \"\" + takenPiece.getPieceType().toString() + \".gif\";\n                final BufferedImage image = ImageIO.read(\n                        new File(Paths.get(\"art\",\"simple\", fileName).toString()));"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "my-app",
-    "inspectionName": "TrivialStringConcatenation"
-  },
-  "hash": "061efaa0647af04649c9b184210bcf6afc0ba22291fd15f0983079b39ef6301c"
+  "hash": "fc8a6be0246f7538c795a1b8dffe0a8913aaca3f4d58c6f85de1b283c0d08e1d"
 },{
   "tool": "Code Inspection",
   "category": "Verbose or redundant code constructs",
   "type": "Redundant String operation",
   "severity": "High",
-  "comment": "Replace 'board.getTile(tileId) .getPiece() .getPieceAlliance() .toString() .substring(0, 1)' with 'board.getTile(tileId) .getPiece() .getPieceAlliance() .toString().charAt(0)'",
+  "comment": "Replace 'board.getTile(tileId).getPiece().getPieceAlliance().toString().substring(0, 1)' with 'board.getTile(tileId).getPiece().getPieceAlliance().toString().charAt(0)'",
   "detailsInfo": "Reports redundant 'String' constructors and calls to methods like 'toString()' or 'substring()' when they can be replaced with a simplified expression. For example, calls to these methods can be safely removed in cases like '\"string\".substring(0)', '\"string\".toString()', or 'new StringBuilder().toString().substring(1,3)'. Example: 'System.out.println(new String(\"message\"));' After the quick-fix is applied: 'System.out.println(\"message\");' Note that the quick-fix removes the redundant constructor, and this may affect 'String' referential equality. If you need to preserve it even though it is considered bad practice, suppress the warning or configure the settings to ignore redundant 'String' constructors. New in 2018.1",
   "sources": [
     {
       "type": "file",
       "path": "src/main/java/com/chess/gui/Table.java",
       "language": "JAVA",
-      "line": 428,
-      "offset": 51,
+      "line": 427,
+      "offset": 78,
       "length": 9,
       "code": {
-        "startLine": 426,
+        "startLine": 425,
         "length": 9,
-        "offset": 180,
-        "surroundingCode": "                                                 .getPieceAlliance()\n                                                 .toString()\n                                                 .substring(0, 1)\n                             + board.getTile(tileId).getPiece().toString()\n                             + \".gif\";"
+        "offset": 125,
+        "surroundingCode": "        try {\n          final String fileName =\n              board.getTile(tileId).getPiece().getPieceAlliance().toString().substring(0, 1)\n                  + board.getTile(tileId).getPiece().toString()\n                  + \".gif\";"
       }
     }
   ],
@@ -445,27 +445,27 @@
     "module": "my-app",
     "inspectionName": "StringOperationCanBeSimplified"
   },
-  "hash": "6d61eebe8acf756893080264faa03fa554885fb899d8ebaab97453e59eaae070"
+  "hash": "e8599a7c6c1013c0c8a861a94ea5264b24619aa7243d3553474a155d2100cd28"
 },{
   "tool": "Code Inspection",
   "category": "Verbose or redundant code constructs",
   "type": "Redundant String operation",
   "severity": "High",
-  "comment": "Replace 'takenPiece.getPieceAlliance().toString().substring(0,1)' with 'takenPiece.getPieceAlliance().toString().charAt(0)'",
+  "comment": "Replace 'takenPiece.getPieceAlliance().toString().substring(0, 1)' with 'takenPiece.getPieceAlliance().toString().charAt(0)'",
   "detailsInfo": "Reports redundant 'String' constructors and calls to methods like 'toString()' or 'substring()' when they can be replaced with a simplified expression. For example, calls to these methods can be safely removed in cases like '\"string\".substring(0)', '\"string\".toString()', or 'new StringBuilder().toString().substring(1,3)'. Example: 'System.out.println(new String(\"message\"));' After the quick-fix is applied: 'System.out.println(\"message\");' Note that the quick-fix removes the redundant constructor, and this may affect 'String' referential equality. If you need to preserve it even though it is considered bad practice, suppress the warning or configure the settings to ignore redundant 'String' constructors. New in 2018.1",
   "sources": [
     {
       "type": "file",
       "path": "src/main/java/com/chess/gui/TakenPiecesPanel.java",
       "language": "JAVA",
-      "line": 87,
-      "offset": 76,
+      "line": 94,
+      "offset": 54,
       "length": 9,
       "code": {
-        "startLine": 85,
+        "startLine": 92,
         "length": 9,
-        "offset": 151,
-        "surroundingCode": "        for (final Piece takenPiece : blackTakenPieces) {\n            try {\n                String fileName = takenPiece.getPieceAlliance().toString().substring(0,1)\n                        + \"\" + takenPiece.getPieceType().toString() + \".gif\";\n                final BufferedImage image = ImageIO.read("
+        "offset": 91,
+        "surroundingCode": "      try {\n        String fileName =\n            takenPiece.getPieceAlliance().toString().substring(0, 1)\n                + \"\"\n                + takenPiece.getPieceType().toString()"
       }
     }
   ],
@@ -473,7 +473,7 @@
     "module": "my-app",
     "inspectionName": "StringOperationCanBeSimplified"
   },
-  "hash": "06033b7a3a943b342329633827db6fe325fb571a428a64659d86662b06eb6023"
+  "hash": "8afe66a122cc803cb910a86ee764f4a6660be3177ccd50429bdac64c1f7ba67e"
 },{
   "tool": "Code Inspection",
   "category": "Verbose or redundant code constructs",
@@ -486,14 +486,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 231,
-      "offset": 91,
+      "line": 222,
+      "offset": 85,
       "length": 9,
       "code": {
-        "startLine": 229,
+        "startLine": 220,
         "length": 9,
-        "offset": 143,
-        "surroundingCode": "        @Override\n        public String toString() {\n            return BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).substring(0, 1)\n                    + \"x\"\n                    + BoardUtils.getPositionAtCoordinate(this.destinationCoordinate);"
+        "offset": 129,
+        "surroundingCode": "    @Override\n    public String toString() {\n      return BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).substring(0, 1)\n          + \"x\"\n          + BoardUtils.getPositionAtCoordinate(this.destinationCoordinate);"
       }
     }
   ],
@@ -501,7 +501,7 @@
     "module": "my-app",
     "inspectionName": "StringOperationCanBeSimplified"
   },
-  "hash": "5e24ea546f4df78e358644a14f81a5621f212707ecb56096e2362850481d4603"
+  "hash": "02391578dd8e394574059c1f898dfa3a637cc68c54a2028808dedb116a5c7346"
 },{
   "tool": "Code Inspection",
   "category": "Threading issues",
@@ -514,14 +514,14 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 15,
-      "offset": 46,
+      "line": 13,
+      "offset": 44,
       "length": 8,
       "code": {
-        "startLine": 13,
+        "startLine": 11,
         "length": 8,
-        "offset": 133,
-        "surroundingCode": "    protected final int destinationCoordinate;\n    protected final boolean isFirstMove;\n    public static final Move NULL_MOVE = new NullMove();\n\n    private Move(Board board,"
+        "offset": 127,
+        "surroundingCode": "  protected final int destinationCoordinate;\n  protected final boolean isFirstMove;\n  public static final Move NULL_MOVE = new NullMove();\n\n  private Move(Board board, Piece movedPiece, int destinationCoordinate) {"
       }
     }
   ],
@@ -529,7 +529,7 @@
     "module": "my-app",
     "inspectionName": "StaticInitializerReferencesSubClass"
   },
-  "hash": "1401e13b6faa2856ab2d154bd13e58edb71993972d7ba15ad4394265d87cd65a"
+  "hash": "bc7bb5e90084ec108df13f424268f5649b71f739782847a2722043abea270c22"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -543,13 +543,13 @@
       "path": "src/main/java/com/chess/engine/pieces/Piece.java",
       "language": "JAVA",
       "line": 13,
-      "offset": 35,
+      "offset": 33,
       "length": 4,
       "code": {
         "startLine": 11,
         "length": 4,
-        "offset": 111,
-        "surroundingCode": "    private PieceType pieceType;\n    protected final Alliance pieceAlliance;\n    private boolean isFirstMove = true;\n    private final int cachedHashCode;\n"
+        "offset": 105,
+        "surroundingCode": "  private PieceType pieceType;\n  protected final Alliance pieceAlliance;\n  private boolean isFirstMove = true;\n  private final int cachedHashCode;\n"
       }
     }
   ],
@@ -557,5 +557,5 @@
     "module": "my-app",
     "inspectionName": "UnusedAssignment"
   },
-  "hash": "3b02f18b9fd04b494b366b90f48ae04b99cd4752b544ecf7e7fdd41558765a4c"
+  "hash": "5166a7ec1cd6298a87f36c965537f371162a22dbb1a607dc22dd6a595f0b899a"
 }]}
