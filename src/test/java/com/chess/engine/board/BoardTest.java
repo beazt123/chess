@@ -5,7 +5,6 @@ import com.chess.engine.player.ai.Minimax;
 import com.chess.engine.player.ai.MoveStrategy;
 import org.junit.Test;
 
-
 import static org.junit.Assert.*;
 
 public class BoardTest {

@@ -4,7 +4,6 @@ import com.chess.engine.pieces.Pawn;
 import com.chess.engine.pieces.Piece;
 import com.chess.engine.pieces.Rook;
 
-
 public abstract class Move {
   protected final Board board;
   protected final Piece movedPiece;
