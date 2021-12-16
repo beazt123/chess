@@ -10,11 +10,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 98,
+      "line": 97,
       "offset": 29,
       "length": 9,
       "code": {
-        "startLine": 96,
+        "startLine": 95,
         "length": 9,
         "offset": 98,
         "surroundingCode": "\n  // Separating the same type of class into many types of subclasses\n  public static final class MajorMove extends Move {\n\n    public MajorMove(Board board, Piece piece, int destinationCoordinate) {"
@@ -25,7 +25,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "c8ba9ef6fe2f8a762135ea685c41abad3478b92a6ff1696f45a58c54c7d27bd8"
+  "hash": "66477e939d0deb4e0c7c9430d7f5b5de609dda2b96d5f7b3b8025d37496f0b4b"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -38,11 +38,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 151,
+      "line": 150,
       "offset": 23,
       "length": 15,
       "code": {
-        "startLine": 149,
+        "startLine": 148,
         "length": 15,
         "offset": 27,
         "surroundingCode": "  }\n\n  public static class MajorAttackMove extends AttackMove {\n    public MajorAttackMove(\n        final Board board,"
@@ -53,7 +53,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "3ec281482494c7003e2f873c6f56e0eb1affef250f4a2a6653bdf917437ad767"
+  "hash": "7e3eab6297528b1a6b27231a2733e2bda99c9276c56c0b9bc7bece7361bfcdf3"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -66,11 +66,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 193,
+      "line": 192,
       "offset": 29,
       "length": 8,
       "code": {
-        "startLine": 191,
+        "startLine": 190,
         "length": 8,
         "offset": 33,
         "surroundingCode": "  }\n\n  public static final class PawnMove extends Move {\n    public PawnMove(Board board, Piece movedPiece, int destinationCoordinate) {\n      super(board, movedPiece, destinationCoordinate);"
@@ -81,7 +81,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "171faabddddf7a7358ed3be7a1b42b391647761765177e74c7f372eed9b63aa7"
+  "hash": "32b08728d2440bcb2907d8211ccd6995772f15cb5abb4c21be39395f14f08f0f"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -94,11 +94,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 209,
+      "line": 208,
       "offset": 23,
       "length": 14,
       "code": {
-        "startLine": 207,
+        "startLine": 206,
         "length": 14,
         "offset": 27,
         "surroundingCode": "  }\n\n  public static class PawnAttackMove extends AttackMove {\n    public PawnAttackMove(\n        Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {"
@@ -109,7 +109,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "aa2f71b4a047613ab644d6e96270ac306f95fd771006073d504d51b89e9e3714"
+  "hash": "975beac43f8096cdf87702ae57f2a7549099ed56c92e3b7ed0f8bed95c3f02ca"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -122,11 +122,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 228,
+      "line": 227,
       "offset": 29,
       "length": 23,
       "code": {
-        "startLine": 226,
+        "startLine": 225,
         "length": 23,
         "offset": 33,
         "surroundingCode": "  }\n\n  public static final class PawnEnPassantAttackMove extends PawnAttackMove {\n    public PawnEnPassantAttackMove(\n        Board board, Piece piece, int destinationCoordinate, Piece attackedPiece) {"
@@ -137,7 +137,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "9f62460f797898d5a5615726de39e0b0bb3e5876464844b8a6446559d8a0c101"
+  "hash": "2aae11cd63082f41fff114cdaf5579d95730d0fb354de7dc451b251886920063"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -150,11 +150,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 350,
+      "line": 349,
       "offset": 29,
       "length": 18,
       "code": {
-        "startLine": 348,
+        "startLine": 347,
         "length": 18,
         "offset": 33,
         "surroundingCode": "  }\n\n  public static final class KingSideCastleMove extends CastleMove {\n    public KingSideCastleMove(\n        Board board,"
@@ -165,7 +165,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "c0272b9c245fa969b9e6c96ca56cd10661336e2d816b1fcc512999c2fb61bb4d"
+  "hash": "2cc4abbe8f9efe9fc8ec7808922446f719090910c439de06e89e5b934e90e6ef"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -178,11 +178,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 378,
+      "line": 377,
       "offset": 29,
       "length": 19,
       "code": {
-        "startLine": 376,
+        "startLine": 375,
         "length": 19,
         "offset": 33,
         "surroundingCode": "  }\n\n  public static final class QueenSideCastleMove extends CastleMove {\n    public QueenSideCastleMove(\n        Board board,"
@@ -193,7 +193,7 @@
     "module": "my-app",
     "inspectionName": "EqualsAndHashcode"
   },
-  "hash": "1fda0ec160ddbe726cb05cd68f6583934add0612320ba4af0ece16836e1f327a"
+  "hash": "65d9cf4cf889e5465a8492dc065083fd33e2c2345f64b4fe45d9f8259daaf78d"
 },{
   "tool": "Code Inspection",
   "category": "Verbose or redundant code constructs",
@@ -486,11 +486,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 222,
+      "line": 221,
       "offset": 85,
       "length": 9,
       "code": {
-        "startLine": 220,
+        "startLine": 219,
         "length": 9,
         "offset": 129,
         "surroundingCode": "    @Override\n    public String toString() {\n      return BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()).substring(0, 1)\n          + \"x\"\n          + BoardUtils.getPositionAtCoordinate(this.destinationCoordinate);"
@@ -501,7 +501,7 @@
     "module": "my-app",
     "inspectionName": "StringOperationCanBeSimplified"
   },
-  "hash": "02391578dd8e394574059c1f898dfa3a637cc68c54a2028808dedb116a5c7346"
+  "hash": "83ee25f7359d82178933fce8def8ce0bc809505d317ecaed6fb6b5976eeec2bd"
 },{
   "tool": "Code Inspection",
   "category": "Threading issues",
@@ -514,11 +514,11 @@
       "type": "file",
       "path": "src/main/java/com/chess/engine/board/Move.java",
       "language": "JAVA",
-      "line": 13,
+      "line": 12,
       "offset": 44,
       "length": 8,
       "code": {
-        "startLine": 11,
+        "startLine": 10,
         "length": 8,
         "offset": 127,
         "surroundingCode": "  protected final int destinationCoordinate;\n  protected final boolean isFirstMove;\n  public static final Move NULL_MOVE = new NullMove();\n\n  private Move(Board board, Piece movedPiece, int destinationCoordinate) {"
@@ -529,7 +529,7 @@
     "module": "my-app",
     "inspectionName": "StaticInitializerReferencesSubClass"
   },
-  "hash": "bc7bb5e90084ec108df13f424268f5649b71f739782847a2722043abea270c22"
+  "hash": "38ea0cf4f4e77d51b5187ddca8eaf510008c91d1463c79d50b55ede50eb79e55"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
